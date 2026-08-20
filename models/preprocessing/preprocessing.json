@@ -1,0 +1,32 @@
+{
+  "features": [
+    "f0",
+    "f1",
+    "f2",
+    "f3",
+    "f4",
+    "f5",
+    "f6",
+    "f7",
+    "f8",
+    "f9",
+    "f10",
+    "f11"
+  ],
+  "dropped_post_treatment": [
+    "exposure"
+  ],
+  "dtype": "float32",
+  "scaler": "none for tree/meta learners; per-model StandardScaler fit-on-train inside neural models",
+  "treatment": "treatment",
+  "outcomes": [
+    "visit",
+    "conversion"
+  ],
+  "seed": 42,
+  "split_counts": {
+    "train": 9785714,
+    "val": 2096939,
+    "test": 2096939
+  }
+}

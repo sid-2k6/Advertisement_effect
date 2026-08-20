@@ -1,0 +1,9 @@
+# large data / environment / checkpoints — not committed
+.venv/
+.tools/
+artifacts/
+criteo_full.csv.gz
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+# keep results/, plots/, models/, notebook, src/, app/, REPORT/
