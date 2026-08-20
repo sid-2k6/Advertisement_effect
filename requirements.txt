@@ -1,0 +1,20 @@
+# Python 3.11. Core scientific + causal + neural + viz stack (versions verified in this study).
+numpy==2.4.6
+pandas==3.0.5
+scipy
+scikit-learn
+lightgbm==4.7.0
+econml==0.17.0
+causalml
+shap==0.51.0
+torch==2.13.0        # CPU build: --index-url https://download.pytorch.org/whl/cpu
+matplotlib
+seaborn
+pyarrow
+joblib
+tqdm
+streamlit==1.62.0
+# notebook execution (optional)
+nbconvert
+nbclient
+ipykernel
