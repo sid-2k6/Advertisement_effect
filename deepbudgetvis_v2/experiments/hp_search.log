@@ -1,0 +1,134 @@
+device cpu
+fold train_months=48 val_months=12 | rows tr=1461 va=366
+fold train_months=60 val_months=12 | rows tr=1827 va=365
+fold train_months=72 val_months=12 | rows tr=2192 va=365
+
+Trial 01/10 | {'hidden': 64, 'dropout': 0.2, 'lr': 0.0003, 'weight_decay': 0.0005, 'lag_window': 21, 'batch_size': 16}
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  warnings.warn(
+   fold1: best_val_loss=0.17400 (epoch 10)
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  warnings.warn(
+   fold2: best_val_loss=0.13757 (epoch 14)
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  warnings.warn(
+   fold3: best_val_loss=0.14886 (epoch 14)
+   -> avg_inner_val_loss=0.15348 | time=166.5s
+
+Trial 02/10 | {'hidden': 32, 'dropout': 0.2, 'lr': 0.0003, 'weight_decay': 0.0005, 'lag_window': 28, 'batch_size': 16}
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  warnings.warn(
+   fold1: best_val_loss=0.20122 (epoch 14)
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  warnings.warn(
+   fold2: best_val_loss=0.19276 (epoch 11)
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  warnings.warn(
+   fold3: best_val_loss=0.17778 (epoch 11)
+   -> avg_inner_val_loss=0.19059 | time=123.2s
+
+Trial 03/10 | {'hidden': 64, 'dropout': 0.3, 'lr': 0.0003, 'weight_decay': 1e-05, 'lag_window': 14, 'batch_size': 16}
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  warnings.warn(
+   fold1: best_val_loss=0.16805 (epoch 12)
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  warnings.warn(
+   fold2: best_val_loss=0.13608 (epoch 13)
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  warnings.warn(
+   fold3: best_val_loss=0.15732 (epoch 11)
+   -> avg_inner_val_loss=0.15382 | time=157.2s
+
+Trial 04/10 | {'hidden': 32, 'dropout': 0.4, 'lr': 0.0003, 'weight_decay': 0.0005, 'lag_window': 14, 'batch_size': 32}
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.4 and num_layers=1
+  warnings.warn(
+   fold1: best_val_loss=0.24634 (epoch 14)
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.4 and num_layers=1
+  warnings.warn(
+   fold2: best_val_loss=0.24486 (epoch 12)
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.4 and num_layers=1
+  warnings.warn(
+   fold3: best_val_loss=0.20455 (epoch 11)
+   -> avg_inner_val_loss=0.23192 | time=70.7s
+
+Trial 05/10 | {'hidden': 32, 'dropout': 0.3, 'lr': 0.001, 'weight_decay': 1e-05, 'lag_window': 14, 'batch_size': 32}
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  warnings.warn(
+   fold1: best_val_loss=0.18856 (epoch 13)
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  warnings.warn(
+   fold2: best_val_loss=0.14908 (epoch 14)
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  warnings.warn(
+   fold3: best_val_loss=0.16045 (epoch 6)
+   -> avg_inner_val_loss=0.16603 | time=65.8s
+
+Trial 06/10 | {'hidden': 48, 'dropout': 0.3, 'lr': 0.0005, 'weight_decay': 1e-05, 'lag_window': 21, 'batch_size': 16}
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  warnings.warn(
+   fold1: best_val_loss=0.17529 (epoch 13)
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  warnings.warn(
+   fold2: best_val_loss=0.14413 (epoch 12)
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  warnings.warn(
+   fold3: best_val_loss=0.15299 (epoch 7)
+   -> avg_inner_val_loss=0.15747 | time=130.3s
+
+Trial 07/10 | {'hidden': 32, 'dropout': 0.3, 'lr': 0.0003, 'weight_decay': 0.0001, 'lag_window': 21, 'batch_size': 32}
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  warnings.warn(
+   fold1: best_val_loss=0.22707 (epoch 14)
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  warnings.warn(
+   fold2: best_val_loss=0.20090 (epoch 14)
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.3 and num_layers=1
+  warnings.warn(
+   fold3: best_val_loss=0.18307 (epoch 12)
+   -> avg_inner_val_loss=0.20368 | time=71.6s
+
+Trial 08/10 | {'hidden': 32, 'dropout': 0.4, 'lr': 0.002, 'weight_decay': 0.0005, 'lag_window': 14, 'batch_size': 32}
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.4 and num_layers=1
+  warnings.warn(
+   fold1: best_val_loss=0.19404 (epoch 10)
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.4 and num_layers=1
+  warnings.warn(
+   fold2: best_val_loss=0.15403 (epoch 14)
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.4 and num_layers=1
+  warnings.warn(
+   fold3: best_val_loss=0.15589 (epoch 9)
+   -> avg_inner_val_loss=0.16798 | time=74.0s
+
+Trial 09/10 | {'hidden': 32, 'dropout': 0.4, 'lr': 0.001, 'weight_decay': 0.0005, 'lag_window': 28, 'batch_size': 32}
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.4 and num_layers=1
+  warnings.warn(
+   fold1: best_val_loss=0.19830 (epoch 14)
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.4 and num_layers=1
+  warnings.warn(
+   fold2: best_val_loss=0.16267 (epoch 11)
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.4 and num_layers=1
+  warnings.warn(
+   fold3: best_val_loss=0.15651 (epoch 14)
+   -> avg_inner_val_loss=0.17249 | time=76.5s
+
+Trial 10/10 | {'hidden': 64, 'dropout': 0.2, 'lr': 0.0003, 'weight_decay': 1e-05, 'lag_window': 28, 'batch_size': 16}
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  warnings.warn(
+   fold1: best_val_loss=0.17142 (epoch 10)
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  warnings.warn(
+   fold2: best_val_loss=0.13439 (epoch 14)
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  warnings.warn(
+   fold3: best_val_loss=0.15628 (epoch 14)
+   -> avg_inner_val_loss=0.15403 | time=161.1s
+
+======================================================================
+BEST CONFIG (by mean inner-val loss across 3 expanding folds, train.csv only):
+  hidden: 64
+  dropout: 0.2
+  lr: 0.0003
+  weight_decay: 0.0005
+  lag_window: 21
+  batch_size: 16
+  avg_inner_val_loss: 0.15348

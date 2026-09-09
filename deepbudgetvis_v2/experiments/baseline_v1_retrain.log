@@ -1,0 +1,46 @@
+device cpu
+v1 original hyperparameters: {'hidden': 48, 'dropout': 0.25, 'lr': 0.001, 'weight_decay': 0.0001, 'lag_window': 21, 'batch_size': 16}
+train windows=2527 val windows=547
+Model parameters: 99,235 (should match original notebook's printed 99,235)
+epoch 000 train_loss=0.5777 val_loss=0.3920
+epoch 001 train_loss=0.2685 val_loss=0.1613
+epoch 002 train_loss=0.2072 val_loss=0.1479
+epoch 003 train_loss=0.1891 val_loss=0.1524
+epoch 004 train_loss=0.1888 val_loss=0.1532
+epoch 005 train_loss=0.1811 val_loss=0.1441
+epoch 006 train_loss=0.1839 val_loss=0.1574
+epoch 007 train_loss=0.1755 val_loss=0.1402
+epoch 008 train_loss=0.1730 val_loss=0.1466
+epoch 009 train_loss=0.1769 val_loss=0.1438
+epoch 010 train_loss=0.1736 val_loss=0.1558
+epoch 011 train_loss=0.1715 val_loss=0.1501
+epoch 012 train_loss=0.1726 val_loss=0.1598
+epoch 013 train_loss=0.1630 val_loss=0.1437
+epoch 014 train_loss=0.1597 val_loss=0.1517
+epoch 015 train_loss=0.1580 val_loss=0.1520
+epoch 016 train_loss=0.1563 val_loss=0.1451
+epoch 017 train_loss=0.1583 val_loss=0.1334
+epoch 018 train_loss=0.1577 val_loss=0.1330
+epoch 019 train_loss=0.1578 val_loss=0.1432
+epoch 020 train_loss=0.1521 val_loss=0.1478
+epoch 021 train_loss=0.1539 val_loss=0.1485
+epoch 022 train_loss=0.1540 val_loss=0.1571
+epoch 023 train_loss=0.1529 val_loss=0.1375
+epoch 024 train_loss=0.1501 val_loss=0.1458
+epoch 025 train_loss=0.1477 val_loss=0.1729
+epoch 026 train_loss=0.1489 val_loss=0.1528
+epoch 027 train_loss=0.1470 val_loss=0.1494
+epoch 028 train_loss=0.1504 val_loss=0.1486
+epoch 029 train_loss=0.1445 val_loss=0.1471
+epoch 030 train_loss=0.1459 val_loss=0.1482
+epoch 031 train_loss=0.1439 val_loss=0.1408
+epoch 032 train_loss=0.1447 val_loss=0.1474
+epoch 033 train_loss=0.1451 val_loss=0.1486
+
+Training complete in 172.5s. Best val_loss=0.13297 at epoch 18
+
+VALIDATION metrics (per target):
+  NET_PATIENT_REVENUE: {'MAE': 7055.2265625, 'RMSE': 9079.6826171875, 'MAPE': 4.132918357849121, 'SMAPE': 4.098017692565918, 'R2': 0.7399126291275024, 'ExplainedVar': 0.7423173189163208, 'MedianAE': 5835.359375, 'MaxError': 32658.765625, 'MAE_scaled': 0.2772618532180786, 'RMSE_scaled': 0.3591843247413635}
+  TOTAL_OPERATING_EXP: {'MAE': 1685.0596923828125, 'RMSE': 3000.280517578125, 'MAPE': 1.5244430303573608, 'SMAPE': 1.5289126634597778, 'R2': 0.740404486656189, 'ExplainedVar': 0.7414515018463135, 'MedianAE': 1194.0703125, 'MaxError': 28355.6171875, 'MAE_scaled': 0.1979123055934906, 'RMSE_scaled': 0.3412913978099823}
+
+All outputs saved to outputs/baseline_v1_retrained/

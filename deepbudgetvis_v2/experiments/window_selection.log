@@ -1,0 +1,28 @@
+device cpu
+seq_len=  7 | train_windows= 2550 val_windows= 547 | best_val_loss=0.12908 best_epoch=13 time=28.6s
+seq_len= 14 | train_windows= 2543 val_windows= 547 | best_val_loss=0.13226 best_epoch=26 time=75.6s
+seq_len= 21 | train_windows= 2536 val_windows= 547 | best_val_loss=0.12733 best_epoch=7  time=45.8s
+seq_len= 30 | train_windows= 2527 val_windows= 547 | best_val_loss=0.13109 best_epoch=16 time=96.3s
+seq_len= 45 | train_windows= 2512 val_windows= 532 | best_val_loss=0.13309 best_epoch=6  time=80.4s
+seq_len= 60 | train_windows= 2497 val_windows= 517 | best_val_loss=0.13000 best_epoch=11 time=143.1s
+
+BEST WINDOW: {'seq_len': 21, 'best_val_loss': 0.12732616956863138, 'best_epoch': 7, 'train_windows': 2536, 'val_windows': 547, 'time_s': 45.75918984413147}
+
+NOTE: results above are from the corrected MultiStreamDataset (n_context-aware
+target restriction). An earlier uncorrected run (discarded) allowed seq_len<30
+windows to target dates inside the 30-day context copied from the preceding
+split, which could contaminate validation with disguised training targets, and
+also under-counted available windows inconsistently across window lengths.
+The corrected run above ensures seq_len in {7,14,21,30} all evaluate on the
+FULL 547 val targets (fair comparison), while seq_len in {45,60} correctly
+evaluate on fewer targets (532/517) since the 30-day context cannot cover
+lookback windows longer than 30 days - this is reported honestly rather than
+hidden.
+
+SELECTED WINDOW: seq_len=21 (lowest val loss among all 6 candidates, and among
+the 4 candidates {7,14,21,30} evaluated on the identical, full 547-window val
+set). This is also consistent with the empirically measured ~14-21 day
+revenue-to-cash-collection lag structure found during the EDA audit (peak
+correlation between TOTAL_GROSS_CHARGES and CASH_COLLECTED at lag=14 days;
+autocorrelation of both targets drops sharply between lag 21 and lag 30 -
+see final report "Upgrade 8" section).

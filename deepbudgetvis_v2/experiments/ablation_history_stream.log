@@ -1,0 +1,8 @@
+=== Ablation: WITHOUT history stream (use_history_stream=False) ===
+best_val_loss=0.14128 at epoch 17 (84.8s)
+  NET_PATIENT_REVENUE: MAE=7367.3 RMSE=9343.3 R2=0.7246
+  TOTAL_OPERATING_EXP: MAE=1868.9 RMSE=3140.8 R2=0.7155
+
+=== Reference: WITH history stream (already trained, from outputs/upgraded_final_defaulthp) ===
+  NET_PATIENT_REVENUE: MAE=6864.5 RMSE=8755.5 R2=0.7582
+  TOTAL_OPERATING_EXP: MAE=1647.0 RMSE=2975.3 R2=0.7447
