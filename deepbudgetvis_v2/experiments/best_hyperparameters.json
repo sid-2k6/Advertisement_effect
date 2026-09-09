@@ -1,0 +1,8 @@
+{
+  "hidden": 64,
+  "dropout": 0.2,
+  "lr": 0.0003,
+  "weight_decay": 0.0005,
+  "lag_window": 21,
+  "batch_size": 16
+}

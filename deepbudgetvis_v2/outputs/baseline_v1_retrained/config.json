@@ -1,0 +1,17 @@
+{
+  "seq_len": 30,
+  "loss": "mse",
+  "hidden": 48,
+  "dropout": 0.25,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "lag_window": 21,
+  "batch_size": 16,
+  "n_params": 99235,
+  "best_epoch": 18,
+  "best_val_loss": 0.13296864777803422,
+  "train_windows": 2527,
+  "val_windows": 547,
+  "seed": 42,
+  "training_time_s": 172.51367163658142
+}

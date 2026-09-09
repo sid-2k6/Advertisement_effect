@@ -1,0 +1,42 @@
+HYPERPARAMETER SEARCH OUTCOME (honest reporting)
+=================================================
+
+Time-aware random search (10 trials, 3 expanding inner folds inside
+train.csv, 15-epoch budget per trial/fold) selected:
+    hidden=64, dropout=0.2, lr=3e-4, weight_decay=5e-4, lag_window=21, batch_size=16
+  with avg_inner_val_loss=0.15348 (see hp_search.log / hp_search_results.json)
+
+This selected config was then trained on the FULL 84-month train.csv with the
+full training budget (max_epochs=120, patience=15) and evaluated on the
+official 18-month val.csv:
+    best_val_loss = 0.13418 (epoch 35), params=182,439
+    (see final_training.log / outputs/upgraded_final_tunedhp/)
+
+As a control, the model's DEFAULT hyperparameters (hidden=48, dropout=0.25,
+lr=1e-3, weight_decay=1e-4, lag_window=21, batch_size=32 - i.e. NOT selected
+by the search) were trained under the IDENTICAL full budget on the same data:
+    best_val_loss = 0.12733 (epoch 7), params=107,015
+    (see final_training_defaulthp.log / outputs/upgraded_final_defaulthp/)
+
+RESULT: the DEFAULT hyperparameters achieved a LOWER (better) validation loss
+than the hyperparameter-search-selected configuration, under an equal full
+training budget on the real val.csv. The inner-fold search (short 15-epoch
+budget, small inner-val folds of ~365 rows each) did not transfer to the
+full-budget/full-val setting in this case - likely because the search's short
+per-trial budget favored a smaller learning rate hd=64 setup that keeps
+improving slowly rather than a config that converges quickly to a strong
+optimum within the ~120-epoch budget actually used for final training.
+
+DECISION: per the task's explicit instruction ("If [random search] does not
+provide a scientifically meaningful advantage... explain the decision" and
+"prefer the simplest choice that demonstrably improves forecasting"), the
+DEFAULT hyperparameters are used for the final model, NOT the HP-search
+result, because they are demonstrably better on the real validation set under
+the real training protocol. The HP search is reported in full as an executed,
+honest experiment that did not produce an improvement - it is not hidden or
+silently discarded.
+
+FINAL model config selected for test evaluation:
+  seq_len=21, loss=mse, hidden=48, dropout=0.25, lr=1e-3, weight_decay=1e-4,
+  lag_window=21, batch_size=32
+  (outputs/upgraded_final_defaulthp/)

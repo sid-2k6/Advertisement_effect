@@ -1,0 +1,65 @@
+device cpu
+Using hyperparameters: {'hidden': 64, 'dropout': 0.2, 'lr': 0.0003, 'weight_decay': 0.0005, 'lag_window': 21, 'batch_size': 16}
+train windows=2536 val windows=547
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  warnings.warn(
+Model parameters: 182,439
+epoch 000 train_loss=0.7207 val_loss=0.8122
+epoch 001 train_loss=0.4893 val_loss=0.5005
+epoch 002 train_loss=0.3613 val_loss=0.2550
+epoch 003 train_loss=0.2054 val_loss=0.1663
+epoch 004 train_loss=0.1880 val_loss=0.1513
+epoch 005 train_loss=0.1808 val_loss=0.1498
+epoch 006 train_loss=0.1781 val_loss=0.1555
+epoch 007 train_loss=0.1744 val_loss=0.1430
+epoch 008 train_loss=0.1770 val_loss=0.1453
+epoch 009 train_loss=0.1743 val_loss=0.1401
+epoch 010 train_loss=0.1742 val_loss=0.1375
+epoch 011 train_loss=0.1673 val_loss=0.1567
+epoch 012 train_loss=0.1695 val_loss=0.1406
+epoch 013 train_loss=0.1701 val_loss=0.1650
+epoch 014 train_loss=0.1659 val_loss=0.1479
+epoch 015 train_loss=0.1703 val_loss=0.1371
+epoch 016 train_loss=0.1708 val_loss=0.1440
+epoch 017 train_loss=0.1666 val_loss=0.1396
+epoch 018 train_loss=0.1667 val_loss=0.1428
+epoch 019 train_loss=0.1670 val_loss=0.1513
+epoch 020 train_loss=0.1692 val_loss=0.1344
+epoch 021 train_loss=0.1664 val_loss=0.1487
+epoch 022 train_loss=0.1672 val_loss=0.1393
+epoch 023 train_loss=0.1675 val_loss=0.1350
+epoch 024 train_loss=0.1661 val_loss=0.1509
+epoch 025 train_loss=0.1653 val_loss=0.1367
+epoch 026 train_loss=0.1608 val_loss=0.1526
+epoch 027 train_loss=0.1635 val_loss=0.1423
+epoch 028 train_loss=0.1628 val_loss=0.1388
+epoch 029 train_loss=0.1606 val_loss=0.1393
+epoch 030 train_loss=0.1604 val_loss=0.1367
+epoch 031 train_loss=0.1621 val_loss=0.1359
+epoch 032 train_loss=0.1624 val_loss=0.1382
+epoch 033 train_loss=0.1609 val_loss=0.1410
+epoch 034 train_loss=0.1564 val_loss=0.1447
+epoch 035 train_loss=0.1583 val_loss=0.1342
+epoch 036 train_loss=0.1571 val_loss=0.1479
+epoch 037 train_loss=0.1601 val_loss=0.1372
+epoch 038 train_loss=0.1573 val_loss=0.1404
+epoch 039 train_loss=0.1595 val_loss=0.1400
+epoch 040 train_loss=0.1583 val_loss=0.1463
+epoch 041 train_loss=0.1570 val_loss=0.1409
+epoch 042 train_loss=0.1568 val_loss=0.1375
+epoch 043 train_loss=0.1550 val_loss=0.1410
+epoch 044 train_loss=0.1593 val_loss=0.1363
+epoch 045 train_loss=0.1554 val_loss=0.1350
+epoch 046 train_loss=0.1581 val_loss=0.1367
+epoch 047 train_loss=0.1554 val_loss=0.1361
+epoch 048 train_loss=0.1542 val_loss=0.1374
+epoch 049 train_loss=0.1551 val_loss=0.1371
+epoch 050 train_loss=0.1558 val_loss=0.1376
+
+Training complete in 276.4s. Best val_loss=0.13418 at epoch 35
+
+VALIDATION metrics (per target):
+  NET_PATIENT_REVENUE: {'MAE': 7185.015625, 'RMSE': 9148.5634765625, 'MAPE': 4.168510437011719, 'SMAPE': 4.1762003898620605, 'R2': 0.7359515428543091, 'ExplainedVar': 0.7400122880935669, 'MedianAE': 6039.484375, 'MaxError': 34622.765625, 'MAE_scaled': 0.282553106546402, 'RMSE_scaled': 0.3599514365196228}
+  TOTAL_OPERATING_EXP: {'MAE': 1703.2415771484375, 'RMSE': 3013.710205078125, 'MAPE': 1.5328174829483032, 'SMAPE': 1.5422371625900269, 'R2': 0.7380752563476562, 'ExplainedVar': 0.7402490377426147, 'MedianAE': 1222.3515625, 'MaxError': 28820.953125, 'MAE_scaled': 0.19963890314102173, 'RMSE_scaled': 0.3422066569328308}
+
+All outputs saved to outputs/upgraded_final/

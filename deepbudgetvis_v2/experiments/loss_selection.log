@@ -1,0 +1,44 @@
+LOSS SELECTION (MSE vs Huber), window=21, train->val only
+============================================================
+
+Motivation check (from EDA audit): skew/kurtosis of the FEATURE columns
+showed clear heavy tails in some expense features (e.g. SUPPLY_EXP skew=11.17,
+kurtosis=150.6, measured on train.csv), which was the original stated reason
+to investigate a robust loss. However, the loss is applied to the TARGETS
+(NET_PATIENT_REVENUE, TOTAL_OPERATING_EXP), not to SUPPLY_EXP. Measured
+directly on train.csv:
+  NET_PATIENT_REVENUE : skew=0.075, kurtosis=-0.510  (near-symmetric, no heavy tail)
+  TOTAL_OPERATING_EXP : skew=0.238, kurtosis=0.703   (mild, not heavy-tailed)
+So the heavy-tail evidence that motivated this experiment does NOT actually
+apply to the two forecasting targets themselves. This is reported honestly;
+the experiment was still run to confirm empirically rather than assume.
+
+Result (val-only, best-epoch checkpoint per loss):
+  loss=mse   | best_val_loss(combined)=0.12733 | best_epoch=7
+     NET_PATIENT_REVENUE : MAE=6864.5  RMSE=8755.5  R2=0.7582
+     TOTAL_OPERATING_EXP : MAE=1647.0  RMSE=2975.3  R2=0.7447
+  loss=huber | best_val_loss(combined)=0.06483 | best_epoch=7
+     NET_PATIENT_REVENUE : MAE=6849.1  RMSE=8740.8  R2=0.7590
+     TOTAL_OPERATING_EXP : MAE=1654.8  RMSE=2982.2  R2=0.7435
+
+NOTE ON THE RAW LOSS VALUES: MSE-loss and Huber-loss values are on different
+numeric scales (Huber's quadratic region is scaled differently near
+delta=1.0), so best_val_loss is NOT directly comparable across the two runs
+as a selection criterion. The methodologically correct comparison is the
+per-target MAE/RMSE/R2 in original financial units (which both models are
+evaluated on identically), shown above.
+
+Per-target comparison: Huber improves NET_PATIENT_REVENUE MAE by ~0.2%
+(6864.5 -> 6849.1) but WORSENS TOTAL_OPERATING_EXP MAE by ~0.5%
+(1647.0 -> 1654.8). R2 differences are in the same negligible range
+(<0.002 absolute on both targets). This is not a meaningful or consistent
+improvement in either direction.
+
+DECISION: MSE was selected for the final model, because (a) the heavy-tail
+evidence that motivated testing Huber applies to a feature column, not to
+either target's actual distribution, and (b) Huber's measured effect on
+validation target metrics is a mixed, sub-1% change - not a demonstrated
+improvement. Per the stated research principle ("prefer the simplest
+architecture/choice that demonstrably improves forecasting"), MSE is kept.
+This is a case where a plausible-sounding upgrade (robust loss) was tested
+and explicitly REJECTED because the data did not support it.

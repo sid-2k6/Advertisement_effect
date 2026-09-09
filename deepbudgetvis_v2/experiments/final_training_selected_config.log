@@ -1,0 +1,37 @@
+device cpu
+Using DEFAULT hyperparameters: {'hidden': 48, 'dropout': 0.25, 'lr': 0.001, 'weight_decay': 0.0001, 'lag_window': 21, 'batch_size': 32}
+train windows=2536 val windows=547
+/usr/local/lib64/python3.9/site-packages/torch/nn/modules/rnn.py:123: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.25 and num_layers=1
+  warnings.warn(
+Model parameters: 107,015
+epoch 000 train_loss=0.6916 val_loss=0.6251
+epoch 001 train_loss=0.4452 val_loss=0.3079
+epoch 002 train_loss=0.2395 val_loss=0.2045
+epoch 003 train_loss=0.2030 val_loss=0.1896
+epoch 004 train_loss=0.1964 val_loss=0.1900
+epoch 005 train_loss=0.1934 val_loss=0.2821
+epoch 006 train_loss=0.1889 val_loss=0.1527
+epoch 007 train_loss=0.1789 val_loss=0.1273
+epoch 008 train_loss=0.1786 val_loss=0.1853
+epoch 009 train_loss=0.1789 val_loss=0.1380
+epoch 010 train_loss=0.1836 val_loss=0.1320
+epoch 011 train_loss=0.1799 val_loss=0.1520
+epoch 012 train_loss=0.1776 val_loss=0.1399
+epoch 013 train_loss=0.1766 val_loss=0.1522
+epoch 014 train_loss=0.1743 val_loss=0.1357
+epoch 015 train_loss=0.1745 val_loss=0.1411
+epoch 016 train_loss=0.1751 val_loss=0.1430
+epoch 017 train_loss=0.1687 val_loss=0.1341
+epoch 018 train_loss=0.1717 val_loss=0.1328
+epoch 019 train_loss=0.1654 val_loss=0.1315
+epoch 020 train_loss=0.1719 val_loss=0.1415
+epoch 021 train_loss=0.1674 val_loss=0.1335
+epoch 022 train_loss=0.1732 val_loss=0.1346
+
+Training complete in 69.0s. Best val_loss=0.12733 at epoch 7
+
+VALIDATION metrics (per target):
+  NET_PATIENT_REVENUE: {'MAE': 6864.494140625, 'RMSE': 8755.4853515625, 'MAPE': 3.991209030151367, 'SMAPE': 3.995041608810425, 'R2': 0.7581543922424316, 'ExplainedVar': 0.7598437070846558, 'MedianAE': 5482.046875, 'MaxError': 33040.625, 'MAE_scaled': 0.2702871561050415, 'RMSE_scaled': 0.3457127511501312}
+  TOTAL_OPERATING_EXP: {'MAE': 1647.0089111328125, 'RMSE': 2975.29296875, 'MAPE': 1.4839214086532593, 'SMAPE': 1.493530035018921, 'R2': 0.7447104454040527, 'ExplainedVar': 0.7460042238235474, 'MedianAE': 1145.4140625, 'MaxError': 28901.953125, 'MAE_scaled': 0.1933348923921585, 'RMSE_scaled': 0.33796027302742004}
+
+All outputs saved to outputs/upgraded_final_defaulthp/
