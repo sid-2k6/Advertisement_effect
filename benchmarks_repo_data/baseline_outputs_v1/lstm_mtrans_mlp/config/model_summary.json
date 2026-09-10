@@ -1,0 +1,27 @@
+{
+  "model_name": "LSTM-mTrans-MLP",
+  "input_shape": [
+    56,
+    39
+  ],
+  "output_shape": [
+    2
+  ],
+  "sequence_length": 56,
+  "n_features": 39,
+  "trainable_parameters": 508738,
+  "optimizer": "AdamW",
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "batch_size": 128,
+  "max_epochs": 100,
+  "early_stopping_patience": 15,
+  "scheduler": "ReduceLROnPlateau(min, factor=0.5, patience=5, min_lr=1e-07)",
+  "loss": "SmoothL1Loss",
+  "device": "cpu",
+  "targets": [
+    "NET_PATIENT_REVENUE",
+    "TOTAL_OPERATING_EXP"
+  ],
+  "seed": 42
+}
