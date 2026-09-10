@@ -7,3 +7,7 @@ __pycache__/
 *.pyc
 .ipynb_checkpoints/
 # keep results/, plots/, models/, notebook, src/, app/, REPORT/
+
+# Benchmark model weights: reproducible by re-running the notebook (~4.5 min on
+# CPU), so not committed. Metrics, predictions, configs and figures ARE committed.
+benchmarks_repo_data/baseline_outputs_v1/*/checkpoints/
